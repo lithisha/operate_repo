@@ -1,7 +1,7 @@
 pipeline {
       agent any
       stages {
-          stage 1('21050832 Stage One') {
+          stage('21050832 Stage One') {
           steps {
             echo '2150832 Start of Pipeline'
           }
