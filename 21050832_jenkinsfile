@@ -6,13 +6,13 @@ pipeline {
             echo '2150832 Start of Pipeline'
           }
           }
-          stage 2('21050832 Stage Two') {
+          stage('21050832 Stage Two') {
           steps {
             echo 'Push changes to Production'    
             input('Proceed or Abort?')
           }
           }
-          stage 3('21050832 Stage Three') {
+          stage('21050832 Stage Three') {
           steps {
                  sh '''#!/bin/bash
                  targets=wbsvr_21050832;
@@ -23,13 +23,13 @@ pipeline {
                  echo "Stage 3 Completed - 21050832"
           }
           }
-          stage 4 ('21050832 Stage Four') {
+          stage('21050832 Stage Four') {
           steps {
             echo 'Production website tested working'
                 
           }
           }
-          stage 5('21050832 Stage Five') {
+          stage('21050832 Stage Five') {
           
           steps {
                  
