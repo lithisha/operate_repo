@@ -1,17 +1,17 @@
 pipeline {
       agent any
       stages {
-          stage('One') {
+          stage 1('21050832 Stage One') {
           steps {
             echo 'Begin of Pipeline: Stage one completes'
           }
           }
-          stage('Two') {
+          stage 2('21050832 Stage Two') {
           steps {
             input('Do you want to update to Development container?')
           }
           }
-          stage('Three') {
+          stage 3('21050832 Stage Three') {
           when {
                 not {
                     branch "Development NOT updated"
@@ -27,13 +27,13 @@ pipeline {
                  echo "Development container updated"
           }
           }
-          stage('Four') {
+          stage 4 ('21050832 Stage Four') {
           steps {
             input('Do you want to update to Production container: Proceed to Production')
                 
           }
           }
-          stage('Five') {
+          stage 5('21050832 Stage Five') {
           when {
                 not {
                     branch "Production NOT updated"
