@@ -18,6 +18,7 @@ pipeline {
                   not {
                         branch "Changes not push to Production"
                        }
+                 }
           steps {
                  sh '''#!/bin/bash
                  targets=websvr_21050832.localdomain;
@@ -28,7 +29,7 @@ pipeline {
                  echo "Stage 3 Completed - 21050832"
           }
           }
-          }
+          
           stage('21050832 Stage Four') {
           steps {
             echo 'Production website tested working'
