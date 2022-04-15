@@ -13,14 +13,20 @@ pipeline {
           }
           }
           stage('21050832 Stage Three') {
+          
+          when {
+                  not {
+                        branch "Changes not push to Production"
+                       }
           steps {
                  sh '''#!/bin/bash
                  targets=websvr_21050832.localdomain;
-                 locate_script='/script_dir/work/operate_repo/21050832_script';
+                 locate_script='21050832/script_dir/21050832_script';
                  docker cp $locate_script $targets://$locate_script;
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
                  echo "Stage 3 Completed - 21050832"
+          }
           }
           }
           stage('21050832 Stage Four') {
